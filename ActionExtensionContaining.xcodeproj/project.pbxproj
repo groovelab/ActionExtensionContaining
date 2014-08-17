@@ -21,6 +21,9 @@
 		7C30E840199DEEE400A1A86C /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C30E83F199DEEE400A1A86C /* ActionViewController.m */; };
 		7C30E842199DEEE400A1A86C /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C30E841199DEEE400A1A86C /* MainInterface.storyboard */; };
 		7C30E845199DEEE400A1A86C /* KeychainPassword.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7C30E83A199DEEE400A1A86C /* KeychainPassword.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7CA8E4FC19A0D50000CEEFAA /* ActionRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA8E4FB19A0D50000CEEFAA /* ActionRequestHandler.m */; };
+		7CA8E4FE19A0D50000CEEFAA /* Action.js in Resources */ = {isa = PBXBuildFile; fileRef = 7CA8E4FD19A0D50000CEEFAA /* Action.js */; };
+		7CA8E50119A0D50000CEEFAA /* KeychainPasswordSafari.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7CA8E4F619A0D50000CEEFAA /* KeychainPasswordSafari.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,20 @@
 			remoteGlobalIDString = 7C30E839199DEEE400A1A86C;
 			remoteInfo = KeychainPassword;
 		};
+		7CA8E4FF19A0D50000CEEFAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C30E7F2199DED1200A1A86C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7CA8E4F519A0D50000CEEFAA;
+			remoteInfo = KeychainPasswordSafari;
+		};
+		7CA8E50219A0D50000CEEFAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C30E7F2199DED1200A1A86C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7CA8E4F519A0D50000CEEFAA;
+			remoteInfo = KeychainPasswordSafari;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -69,6 +86,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				7C30E82F199DEECA00A1A86C /* Stamp.appex in Embed App Extensions */,
+				7CA8E50119A0D50000CEEFAA /* KeychainPasswordSafari.appex in Embed App Extensions */,
 				7C30E845199DEEE400A1A86C /* KeychainPassword.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -103,6 +121,12 @@
 		7C30E83E199DEEE400A1A86C /* ActionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionViewController.h; sourceTree = "<group>"; };
 		7C30E83F199DEEE400A1A86C /* ActionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionViewController.m; sourceTree = "<group>"; };
 		7C30E841199DEEE400A1A86C /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		7CA8E4F619A0D50000CEEFAA /* KeychainPasswordSafari.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KeychainPasswordSafari.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CA8E4F919A0D50000CEEFAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CA8E4FA19A0D50000CEEFAA /* ActionRequestHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActionRequestHandler.h; sourceTree = "<group>"; };
+		7CA8E4FB19A0D50000CEEFAA /* ActionRequestHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActionRequestHandler.m; sourceTree = "<group>"; };
+		7CA8E4FD19A0D50000CEEFAA /* Action.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Action.js; sourceTree = "<group>"; };
+		7CA8E50719A0D50D00CEEFAA /* KeychainPasswordSafari.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = KeychainPasswordSafari.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +158,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7CA8E4F319A0D50000CEEFAA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -144,6 +175,7 @@
 				7C30E813199DED1200A1A86C /* ActionExtensionContainingTests */,
 				7C30E825199DEECA00A1A86C /* Stamp */,
 				7C30E83B199DEEE400A1A86C /* KeychainPassword */,
+				7CA8E4F719A0D50000CEEFAA /* KeychainPasswordSafari */,
 				7C30E7FB199DED1200A1A86C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -155,6 +187,7 @@
 				7C30E810199DED1200A1A86C /* ActionExtensionContainingTests.xctest */,
 				7C30E824199DEECA00A1A86C /* Stamp.appex */,
 				7C30E83A199DEEE400A1A86C /* KeychainPassword.appex */,
+				7CA8E4F619A0D50000CEEFAA /* KeychainPasswordSafari.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,6 +274,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7CA8E4F719A0D50000CEEFAA /* KeychainPasswordSafari */ = {
+			isa = PBXGroup;
+			children = (
+				7CA8E50719A0D50D00CEEFAA /* KeychainPasswordSafari.entitlements */,
+				7CA8E4FA19A0D50000CEEFAA /* ActionRequestHandler.h */,
+				7CA8E4FB19A0D50000CEEFAA /* ActionRequestHandler.m */,
+				7CA8E4FD19A0D50000CEEFAA /* Action.js */,
+				7CA8E4F819A0D50000CEEFAA /* Supporting Files */,
+			);
+			path = KeychainPasswordSafari;
+			sourceTree = "<group>";
+		};
+		7CA8E4F819A0D50000CEEFAA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7CA8E4F919A0D50000CEEFAA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -260,6 +313,8 @@
 				7C30E831199DEECA00A1A86C /* PBXTargetDependency */,
 				7C30E844199DEEE400A1A86C /* PBXTargetDependency */,
 				7C30E847199DEEE400A1A86C /* PBXTargetDependency */,
+				7CA8E50019A0D50000CEEFAA /* PBXTargetDependency */,
+				7CA8E50319A0D50000CEEFAA /* PBXTargetDependency */,
 			);
 			name = ActionExtensionContaining;
 			productName = ActionExtensionContaining;
@@ -318,6 +373,23 @@
 			productReference = 7C30E83A199DEEE400A1A86C /* KeychainPassword.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		7CA8E4F519A0D50000CEEFAA /* KeychainPasswordSafari */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CA8E50619A0D50000CEEFAA /* Build configuration list for PBXNativeTarget "KeychainPasswordSafari" */;
+			buildPhases = (
+				7CA8E4F219A0D50000CEEFAA /* Sources */,
+				7CA8E4F319A0D50000CEEFAA /* Frameworks */,
+				7CA8E4F419A0D50000CEEFAA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeychainPasswordSafari;
+			productName = KeychainPasswordSafari;
+			productReference = 7CA8E4F619A0D50000CEEFAA /* KeychainPasswordSafari.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -352,6 +424,15 @@
 							};
 						};
 					};
+					7CA8E4F519A0D50000CEEFAA = {
+						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 6B9DDK2847;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
 				};
 			};
 			buildConfigurationList = 7C30E7F5199DED1200A1A86C /* Build configuration list for PBXProject "ActionExtensionContaining" */;
@@ -371,6 +452,7 @@
 				7C30E80F199DED1200A1A86C /* ActionExtensionContainingTests */,
 				7C30E823199DEECA00A1A86C /* Stamp */,
 				7C30E839199DEEE400A1A86C /* KeychainPassword */,
+				7CA8E4F519A0D50000CEEFAA /* KeychainPasswordSafari */,
 			);
 		};
 /* End PBXProject section */
@@ -407,6 +489,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C30E842199DEEE400A1A86C /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CA8E4F419A0D50000CEEFAA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CA8E4FE19A0D50000CEEFAA /* Action.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +537,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7CA8E4F219A0D50000CEEFAA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CA8E4FC19A0D50000CEEFAA /* ActionRequestHandler.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -474,6 +572,16 @@
 			isa = PBXTargetDependency;
 			target = 7C30E839199DEEE400A1A86C /* KeychainPassword */;
 			targetProxy = 7C30E846199DEEE400A1A86C /* PBXContainerItemProxy */;
+		};
+		7CA8E50019A0D50000CEEFAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7CA8E4F519A0D50000CEEFAA /* KeychainPasswordSafari */;
+			targetProxy = 7CA8E4FF19A0D50000CEEFAA /* PBXContainerItemProxy */;
+		};
+		7CA8E50319A0D50000CEEFAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7CA8E4F519A0D50000CEEFAA /* KeychainPasswordSafari */;
+			targetProxy = 7CA8E50219A0D50000CEEFAA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -687,6 +795,38 @@
 			};
 			name = Release;
 		};
+		7CA8E50419A0D50000CEEFAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = KeychainPasswordSafari/KeychainPasswordSafari.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KeychainPasswordSafari/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7CA8E50519A0D50000CEEFAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = KeychainPasswordSafari/KeychainPasswordSafari.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = KeychainPasswordSafari/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -734,6 +874,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		7CA8E50619A0D50000CEEFAA /* Build configuration list for PBXNativeTarget "KeychainPasswordSafari" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CA8E50419A0D50000CEEFAA /* Debug */,
+				7CA8E50519A0D50000CEEFAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

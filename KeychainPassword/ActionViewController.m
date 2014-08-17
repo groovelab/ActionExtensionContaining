@@ -41,7 +41,7 @@
         NSString *stringForCopy = [[NSString alloc] initWithData:resultData encoding:NSUTF8StringEncoding];
         if ( status != errSecSuccess ) {
             //  show error alert
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"error" message:@"not saved passwrord" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"error" message:@"no passwrord" preferredStyle:UIAlertControllerStyleAlert];
             [alert addAction:[UIAlertAction actionWithTitle:@"launch containing app" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
                 //  open containing app
                 NSString *urlStr = @"asia.groovelab.ActionExtensionContaining://";
