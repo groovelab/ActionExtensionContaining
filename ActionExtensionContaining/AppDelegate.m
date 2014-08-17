@@ -42,4 +42,14 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    if ([[url scheme] isEqualToString:@"asia.groovelab.ActionExtensionContaining"]) {
+        return YES;
+    }
+    return NO;
+}
+
+
 @end

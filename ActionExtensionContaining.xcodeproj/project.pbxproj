@@ -77,6 +77,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7C25C35319A0BDC30049CE59 /* KeychainPassword.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = KeychainPassword.entitlements; sourceTree = "<group>"; };
+		7C25C35419A0BDDB0049CE59 /* ActionExtensionContaining.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ActionExtensionContaining.entitlements; sourceTree = "<group>"; };
 		7C26F5D9199E164D006D7F4C /* oke.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = oke.jpg; sourceTree = "<group>"; };
 		7C26F5DB199E1F80006D7F4C /* stamp.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = stamp.gif; sourceTree = "<group>"; };
 		7C30E7FA199DED1200A1A86C /* ActionExtensionContaining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActionExtensionContaining.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +162,7 @@
 		7C30E7FC199DED1200A1A86C /* ActionExtensionContaining */ = {
 			isa = PBXGroup;
 			children = (
+				7C25C35419A0BDDB0049CE59 /* ActionExtensionContaining.entitlements */,
 				7C30E801199DED1200A1A86C /* AppDelegate.h */,
 				7C30E802199DED1200A1A86C /* AppDelegate.m */,
 				7C30E804199DED1200A1A86C /* ViewController.h */,
@@ -221,6 +224,7 @@
 		7C30E83B199DEEE400A1A86C /* KeychainPassword */ = {
 			isa = PBXGroup;
 			children = (
+				7C25C35319A0BDC30049CE59 /* KeychainPassword.entitlements */,
 				7C30E83E199DEEE400A1A86C /* ActionViewController.h */,
 				7C30E83F199DEEE400A1A86C /* ActionViewController.m */,
 				7C30E841199DEEE400A1A86C /* MainInterface.storyboard */,
@@ -325,6 +329,12 @@
 				TargetAttributes = {
 					7C30E7F9199DED1200A1A86C = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 6B9DDK2847;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					7C30E80F199DED1200A1A86C = {
 						CreatedOnToolsVersion = 6.0;
@@ -335,6 +345,12 @@
 					};
 					7C30E839199DEEE400A1A86C = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 6B9DDK2847;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -556,9 +572,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = ActionExtensionContaining/ActionExtensionContaining.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ActionExtensionContaining/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -567,9 +587,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = ActionExtensionContaining/ActionExtensionContaining.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ActionExtensionContaining/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -634,6 +658,9 @@
 		7C30E849199DEEE400A1A86C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = KeychainPassword/KeychainPassword.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -641,6 +668,7 @@
 				INFOPLIST_FILE = KeychainPassword/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -648,9 +676,13 @@
 		7C30E84A199DEEE400A1A86C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = KeychainPassword/KeychainPassword.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KeychainPassword/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

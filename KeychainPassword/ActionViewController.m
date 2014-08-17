@@ -10,9 +10,6 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 
 @interface ActionViewController ()
-
-@property(strong,nonatomic) IBOutlet UIImageView *imageView;
-
 @end
 
 @implementation ActionViewController
@@ -20,34 +17,48 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Get the item[s] we're handling from the extension context.
+    //  if you want to delete password, uncomment the below line
+//    [self deleteItemAsync];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
     
-    // For example, look for an image and place it into an image view.
-    // Replace this with something appropriate for the type[s] your extension supports.
-    BOOL imageFound = NO;
-    for (NSExtensionItem *item in self.extensionContext.inputItems) {
-        for (NSItemProvider *itemProvider in item.attachments) {
-            if ([itemProvider hasItemConformingToTypeIdentifier:(NSString *)kUTTypeImage]) {
-                // This is an image. We'll load it, then place it in our image view.
-                __weak UIImageView *imageView = self.imageView;
-                [itemProvider loadItemForTypeIdentifier:(NSString *)kUTTypeImage options:nil completionHandler:^(UIImage *image, NSError *error) {
-                    if(image) {
-                        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                            [imageView setImage:image];
-                        }];
-                    }
-                }];
+    NSDictionary *query = @{
+                            (__bridge id)kSecClass: (__bridge id)kSecClassGenericPassword,
+                            (__bridge id)kSecAttrService: @"SampleService",
+                            (__bridge id)kSecReturnData: @YES,
+                            (__bridge id)kSecUseOperationPrompt: @"authorize"
+                            };
+    
+    __block ActionViewController* instance = self;
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+
+        CFTypeRef dataTypeRef = NULL;
+        OSStatus status = SecItemCopyMatching((__bridge CFDictionaryRef)(query), &dataTypeRef);
+        NSData *resultData = (__bridge NSData *)dataTypeRef;
+        NSString *stringForCopy = [[NSString alloc] initWithData:resultData encoding:NSUTF8StringEncoding];
+        if ( status != errSecSuccess ) {
+            //  show error alert
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"error" message:@"not saved passwrord" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"launch containing app" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                //  open containing app
+                NSString *urlStr = @"asia.groovelab.ActionExtensionContaining://";
+                //                [[self extensionContext] openURL:[NSURL URLWithString:urlStr] completionHandler:nil];
                 
-                imageFound = YES;
-                break;
-            }
+                UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectMake(0,0,1,1)];
+                [instance.view addSubview:webView];
+                NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
+                [webView loadRequest:request];
+            }]];
+            [instance presentViewController:alert animated:YES completion:nil];
+            return;
         }
         
-        if (imageFound) {
-            // We only handle one image, so stop looking for more.
-            break;
-        }
-    }
+        UIPasteboard *pasteBoard = [UIPasteboard generalPasteboard];
+        [pasteBoard setValue:stringForCopy forPasteboardType:@"public.utf8-plain-text"];
+    });
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,6 +70,19 @@
     // Return any edited content to the host app.
     // This template doesn't do anything, so we just echo the passed in items.
     [self.extensionContext completeRequestReturningItems:self.extensionContext.inputItems completionHandler:nil];
+}
+
+- (void)deleteItemAsync
+{
+    NSDictionary *query = @{
+                            (__bridge id)kSecClass: (__bridge id)kSecClassGenericPassword,
+                            (__bridge id)kSecAttrService: @"SampleService"
+                            };
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        OSStatus status = SecItemDelete((__bridge CFDictionaryRef)(query));
+        NSLog( @"%d", status );
+    });
 }
 
 @end
